@@ -12,9 +12,9 @@ tabuleiro = [
     [" ", " ", " "]
 ]
 
-executando = True
+opcao = ""
 
-while executando == True:
+while opcao != "4":
     print("\n=========================")
     print("      JOGO DA VELHA      ")
     print("=========================")
@@ -25,7 +25,26 @@ while executando == True:
     print("=========================")
 
     opcao = input("Escolha uma opção (1 a 4): ")
+    while opcao != "1" and opcao != "2" and opcao != "3" and opcao != "4":
+        print("Entrada inválida! Digite um número de 1 a 4.")
+        opcao = input("Escolha uma opção (1 a 4): ")
 
-    if opcao == "4":
-        print("Saindo do jogo... Até logo!")
-        executando = False
+    if opcao == "1":
+        # Adicionar jogo
+        pass
+    elif opcao == "2":
+        print("\n=========================")
+        print("     REGRAS DO JOGO      ")
+        print("=========================")
+        print("1. O jogo é disputado em um tabuleiro 3x3 por dois jogadores.")
+        print("2. O Jogador 1 utiliza o símbolo 'X' e o Jogador 2 utiliza 'O'.")
+        print("3. Os jogadores alternam escolhendo uma linha (1 a 3) e uma coluna (1 a 3).")
+        print("4. Não é permitido jogar em uma casa já ocupada.")
+        print("5. Vence quem completar primeiro uma linha, coluna ou diagonal com seu símbolo.")
+        print("6. Se o tabuleiro for todo preenchido sem vencedor, a partida empata.")
+        print("=========================")
+    elif opcao == "3":
+        # fazer placar aglomerativo (olhar o grupo)
+        pass
+    elif opcao == "4":
+        print("Saindo do jogo... Obrigado por jogar!")
