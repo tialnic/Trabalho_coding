@@ -14,6 +14,12 @@ tabuleiro = [
 
 opcao = ""
 
+print("=========================")
+print("        Bem-vindo")
+print("           ao")
+print("     Jogo da Velha!")
+print("=========================")
+
 while opcao != "4":
     print("\n=========================")
     print("      JOGO DA VELHA      ")
@@ -43,6 +49,7 @@ while opcao != "4":
         print("5. Vence quem completar primeiro uma linha, coluna ou diagonal com seu símbolo.")
         print("6. Se o tabuleiro for todo preenchido sem vencedor, a partida empata.")
         print("=========================")
+        input("\nPressione Enter para voltar ao menu...")
     elif opcao == "3":
         # fazer placar aglomerativo (olhar o grupo)
         pass
