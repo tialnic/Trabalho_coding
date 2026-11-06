@@ -1,5 +1,5 @@
 jogador1 = "X"
-jogasor2= "O"
+jogador2= "O"
 
 vitorias_jogador1 = 0
 vitorias_jogador2 = 0
@@ -53,7 +53,12 @@ while opcao != "4":
         
         jogador_atual = jogador1
         jogada = input(f"Jogador {jogador_atual}, digite a casa: ")
-
+        
+        for linha in range(3):
+           for coluna in range(3):
+            
+              if mapa[linha][coluna] == jogada:
+                tabuleiro[linha][coluna] = jogador_atual
         
     elif opcao == "2":
         print("\n=========================")
