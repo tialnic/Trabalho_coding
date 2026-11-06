@@ -1,5 +1,5 @@
-simbolo_jogador1 = "X"
-simbolo_jogador2 = "O"
+jogador1 = "X"
+jogador2= "O"
 
 vitorias_jogador1 = 0
 vitorias_jogador2 = 0
@@ -36,8 +36,19 @@ while opcao != "4":
         opcao = input("Escolha uma opção (1 a 4): ")
 
     if opcao == "1":
-        # Adicionar jogo
-        pass
+        
+        print("=== JOGO DA VELHA ===")
+
+        print(f" {tabuleiro[0][0]} | {tabuleiro[0][1]} | {tabuleiro[0][2]} ")
+        print("-----------")
+        print(f" {tabuleiro[1][0]} | {tabuleiro[1][1]} | {tabuleiro[1][2]} ")
+        print("-----------")
+        print(f" {tabuleiro[2][0]} | {tabuleiro[2][1]} | {tabuleiro[2][2]} \n")
+        
+        jogador_atual = jogador1
+        
+        
+        
     elif opcao == "2":
         print("\n=========================")
         print("     REGRAS DO JOGO      ")
