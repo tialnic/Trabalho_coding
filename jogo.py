@@ -1,5 +1,5 @@
 jogador1 = "X"
-jogador2= "O"
+jogasor2= "O"
 
 vitorias_jogador1 = 0
 vitorias_jogador2 = 0
@@ -10,6 +10,12 @@ tabuleiro = [
     [" ", " ", " "],
     [" ", " ", " "],
     [" ", " ", " "]
+]
+
+mapa = [
+    ["1", "2", "3"],
+    ["4", "5", "6"],
+    ["7", "8", "9"]
 ]
 
 opcao = ""
@@ -46,8 +52,8 @@ while opcao != "4":
         print(f" {tabuleiro[2][0]} | {tabuleiro[2][1]} | {tabuleiro[2][2]} \n")
         
         jogador_atual = jogador1
-        
-        
+        jogada = input(f"Jogador {jogador_atual}, digite a casa: ")
+
         
     elif opcao == "2":
         print("\n=========================")
@@ -55,7 +61,8 @@ while opcao != "4":
         print("=========================")
         print("1. O jogo é disputado em um tabuleiro 3x3 por dois jogadores.")
         print("2. O Jogador 1 utiliza o símbolo 'X' e o Jogador 2 utiliza 'O'.")
-        print("3. Os jogadores alternam escolhendo uma linha (1 a 3) e uma coluna (1 a 3).")
+        print("3. Os jogadores escolhem uma jogada de 1 a 9(1 a 3 primeira linha da esquerda pra direita)")
+        print("numero 3 a 6 escolhe a casa da esquerda pra direita da segunda linha e 7 a 9 da terceira linha")
         print("4. Não é permitido jogar em uma casa já ocupada.")
         print("5. Vence quem completar primeiro uma linha, coluna ou diagonal com seu símbolo.")
         print("6. Se o tabuleiro for todo preenchido sem vencedor, a partida empata.")
