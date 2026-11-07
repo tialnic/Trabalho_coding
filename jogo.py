@@ -59,6 +59,14 @@ while opcao != "4":
             
               if mapa[linha][coluna] == jogada:
                 tabuleiro[linha][coluna] = jogador_atual
+              
+        print("=== JOGO DA VELHA ===")
+        print(f" {tabuleiro[0][0]} | {tabuleiro[0][1]} | {tabuleiro[0][2]} ")
+        print("-----------")
+        print(f" {tabuleiro[1][0]} | {tabuleiro[1][1]} | {tabuleiro[1][2]} ")
+        print("-----------")
+        print(f" {tabuleiro[2][0]} | {tabuleiro[2][1]} | {tabuleiro[2][2]} \n")
+     
         
     elif opcao == "2":
         print("\n=========================")
