@@ -53,12 +53,50 @@ while opcao != "4":
         
         jogador_atual = jogador1
         jogada = input(f"Jogador {jogador_atual}, digite a casa: ")
+
+        posicao_valida = False
         
         for linha in range(3):
            for coluna in range(3):
             
-              if mapa[linha][coluna] == jogada:
-                tabuleiro[linha][coluna] = jogador_atual
+              if mapa[linha][coluna] == jogada: 
+                if tabuleiro[linha][coluna] == " ":
+                   tabuleiro[linha][coluna] = jogador_atual
+                   posicao_valida = True
+
+                elif tabuleiro[linha][coluna] == "":
+                 tabuleiro[linha][coluna] = jogador_atual
+
+        if posicao_valida == True:
+            print("Jogada realizada!")
+
+            for linha in range(3):
+                    if tabuleiro[linha][0] == jogador_atual and tabuleiro[linha][1] == jogador_atual and tabuleiro[linha][2] == jogador_atual:
+                        vencedor = jogador_atual
+
+            for coluna in range(3):
+                if tabuleiro[0][coluna] == jogador_atual and tabuleiro[1][coluna] == jogador_atual and tabuleiro[2][coluna] == jogador_atual:
+                   vencedor = jogador_atual
+
+                if tabuleiro[0][0] == jogador_atual and tabuleiro[1][1] == jogador_atual and tabuleiro[2][2] == jogador_atual:
+                    vencedor = jogador_atual
+
+                elif tabuleiro[0][2] == jogador_atual and tabuleiro[1][1] == jogador_atual and tabuleiro[2][0] == jogador_atual:
+                    vencedor = jogador_atual
+
+                empates = True
+
+            for linha in range(3):
+                for coluna in range(3):
+                        if tabuleiro[linha][coluna] == " ":
+                            empates = False
+
+                if empates == True and vencedor == "":
+                    vencedor = "Empate"
+
+        if vencedor == jogador1:
+               print("\nJogador 1 venceu!")
+
               
         print("=== JOGO DA VELHA ===")
         print(f" {tabuleiro[0][0]} | {tabuleiro[0][1]} | {tabuleiro[0][2]} ")
