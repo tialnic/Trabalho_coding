@@ -43,59 +43,47 @@ while opcao != "4":
 
     if opcao == "1":
         
-        print("=== JOGO DA VELHA ===")
-
-        print(f" {tabuleiro[0][0]} | {tabuleiro[0][1]} | {tabuleiro[0][2]} ")
-        print("-----------")
-        print(f" {tabuleiro[1][0]} | {tabuleiro[1][1]} | {tabuleiro[1][2]} ")
-        print("-----------")
-        print(f" {tabuleiro[2][0]} | {tabuleiro[2][1]} | {tabuleiro[2][2]} \n")
-        
+        jogadas_feitas = 0
         jogador_atual = jogador1
-        jogada = input(f"Jogador {jogador_atual}, digite a casa: ")
-
-        posicao_valida = False
         
-        for linha in range(3):
-           for coluna in range(3):
+        while jogadas_feitas < 9:
+            print("\n=== JOGO DA VELHA ===")
+
+            print(f" {tabuleiro[0][0]} | {tabuleiro[0][1]} | {tabuleiro[0][2]} ")
+            print("-----------")
+            print(f" {tabuleiro[1][0]} | {tabuleiro[1][1]} | {tabuleiro[1][2]} ")
+            print("-----------")
+            print(f" {tabuleiro[2][0]} | {tabuleiro[2][1]} | {tabuleiro[2][2]} \n")
             
-              if mapa[linha][coluna] == jogada: 
-                if tabuleiro[linha][coluna] == " ":
-                   tabuleiro[linha][coluna] = jogador_atual
-                   posicao_valida = True
+            jogada = input(f"Jogador {jogador_atual}, digite a casa: ")
 
-                elif tabuleiro[linha][coluna] == "":
-                 tabuleiro[linha][coluna] = jogador_atual
-
-        if posicao_valida == True:
-            print("Jogada realizada!")
-
+            posicao_valida = False
+            
             for linha in range(3):
-                    if tabuleiro[linha][0] == jogador_atual and tabuleiro[linha][1] == jogador_atual and tabuleiro[linha][2] == jogador_atual:
-                        vencedor = jogador_atual
+               for coluna in range(3):
+                
+                  if mapa[linha][coluna] == jogada: 
+                    if tabuleiro[linha][coluna] == " ":
+                       tabuleiro[linha][coluna] = jogador_atual
+                       posicao_valida = True
 
-            for coluna in range(3):
-                if tabuleiro[0][coluna] == jogador_atual and tabuleiro[1][coluna] == jogador_atual and tabuleiro[2][coluna] == jogador_atual:
-                   vencedor = jogador_atual
+                    elif tabuleiro[linha][coluna] == "":
+                       tabuleiro[linha][coluna] = jogador_atual
+                       posicao_valida = True
 
-                if tabuleiro[0][0] == jogador_atual and tabuleiro[1][1] == jogador_atual and tabuleiro[2][2] == jogador_atual:
-                    vencedor = jogador_atual
+            
+            if posicao_valida == True:
+                print("Jogada realizada!")
+                jogadas_feitas += 1
 
-                elif tabuleiro[0][2] == jogador_atual and tabuleiro[1][1] == jogador_atual and tabuleiro[2][0] == jogador_atual:
-                    vencedor = jogador_atual
-
-                empates = True
-
-            for linha in range(3):
-                for coluna in range(3):
-                        if tabuleiro[linha][coluna] == " ":
-                            empates = False
-
-                if empates == True and vencedor == "":
-                    vencedor = "Empate"
-
-        if vencedor == jogador1:
-               print("\nJogador 1 venceu!")
+                
+                if jogador_atual == jogador1:
+                    jogador_atual = jogador2
+                else:
+                    jogador_atual = jogador1
+            
+            else:
+                print("Jogada inválida! Tente novamente.")
 
               
         print("=== JOGO DA VELHA ===")
@@ -124,3 +112,4 @@ while opcao != "4":
         pass
     elif opcao == "4":
         print("Saindo do jogo... Obrigado por jogar!")
+    
