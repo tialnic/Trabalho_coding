@@ -1,4 +1,4 @@
-ojogador1 = "X"
+jogador1 = "X"
 jogador2= "O"
 
 vitorias_jogador1 = 0
