@@ -46,7 +46,7 @@ while opcao != "4":
         jogadas_feitas = 0
         jogador_atual = jogador1
         vencedor = ""
-        while jogadas_feitas < 9:
+        while jogadas_feitas < 9 and vencedor == "":
             print("\n=== JOGO DA VELHA ===")
 
             print(f" {tabuleiro[0][0]} | {tabuleiro[0][1]} | {tabuleiro[0][2]} ")
@@ -98,7 +98,7 @@ while opcao != "4":
                   tabuleiro[2][0] == jogador_atual):
                   vencedor = jogador_atual
                       
-            if vencedor == ""       
+            if vencedor == "" :      
                 if jogador_atual == jogador1:
                     jogador_atual = jogador2
                 else:
