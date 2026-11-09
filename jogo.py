@@ -1,4 +1,4 @@
-jogador1 = "X"
+ojogador1 = "X"
 jogador2= "O"
 
 vitorias_jogador1 = 0
@@ -45,7 +45,7 @@ while opcao != "4":
         
         jogadas_feitas = 0
         jogador_atual = jogador1
-        
+        vencedor = ""
         while jogadas_feitas < 9:
             print("\n=== JOGO DA VELHA ===")
 
@@ -76,16 +76,44 @@ while opcao != "4":
                 print("Jogada realizada!")
                 jogadas_feitas += 1
 
-                
+            for linha in range(3):
+                if ( tabuleiro[linha][0] == jogador_atual and
+                     tabuleiro[linha][1] == jogador_atual and
+                     tabuleiro[linha][2] == jogador_atual):
+                    vencedor = jogador_atual
+
+            for coluna in range(3):
+                if ( tabuleiro[0][coluna] == jogador_atual and
+                     tabuleiro[1][coluna] == jogador_atual and 
+                     tabuleiro[2][coluna] == jogador_atual):
+                     vencedor = jogador_atual    
+
+            if (tabuleiro[0][0] == jogador_atual and 
+                tabuleiro[1][1] == jogador_atual and 
+                tabuleiro[2][2] == jogador_atual):
+                vencedor = jogador_atual
+
+            elif (tabuleiro[0][2] == jogador_atual and
+                  tabuleiro[1][1] == jogador_atual and
+                  tabuleiro[2][0] == jogador_atual):
+                  vencedor = jogador_atual
+                      
+            if vencedor == ""       
                 if jogador_atual == jogador1:
                     jogador_atual = jogador2
                 else:
                     jogador_atual = jogador1
-            
             else:
                 print("Jogada inválida! Tente novamente.")
 
-              
+    if vencedor == jogador1:
+        print("Jogador 1 venceu!")
+        vitorias_jogador1 += 1
+        
+    elif vencedor == jogador2:
+        print("Jogador 2 venceu!")
+        vitorias_jogador2 += 1
+
         print("=== JOGO DA VELHA ===")
         print(f" {tabuleiro[0][0]} | {tabuleiro[0][1]} | {tabuleiro[0][2]} ")
         print("-----------")
