@@ -42,10 +42,21 @@ while opcao != "4":
         opcao = input("Escolha uma opção (1 a 4): ")
 
     if opcao == "1":
+
+        recomecar = "0"
+
+    while recomecar == "0":
+
+        tabuleiro = [
+            [" ", " ", " "],
+            [" ", " ", " "],
+            [" ", " ", " "]
+        ]
         
         jogadas_feitas = 0
         jogador_atual = jogador1
         vencedor = ""
+        
         while jogadas_feitas < 9 and vencedor == "":
             print("\n=== JOGO DA VELHA ===")
 
@@ -114,6 +125,15 @@ while opcao != "4":
         print("Jogador 2 venceu!")
         vitorias_jogador2 += 1
 
+        recomecar = ""
+        
+        while recomecar != "0" and recomecar != "1":
+            recomecar = input("\nDigite 0 para recomeçar ou 1 para voltar ao menu: ")
+
+            if recomecar != "0" and recomecar != "1":
+                print("Opção inválida! Digite 0 ou 1.")
+
+        
         print("=== JOGO DA VELHA ===")
         print(f" {tabuleiro[0][0]} | {tabuleiro[0][1]} | {tabuleiro[0][2]} ")
         print("-----------")
