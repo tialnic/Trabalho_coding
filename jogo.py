@@ -144,6 +144,12 @@ while opcao != "4":
 
             recomecar = ""
 
+            while recomecar != "0" and recomecar != "1":
+                recomecar = input("\nDigite 0 para recomeçar ou 1 para voltar ao menu: ")
+                
+                if recomecar != "0" and recomecar != "1":
+                    print("Opção inválida! Digite 0 ou 1.")
+                    
     elif opcao == "2":
 
         print("\n=========================")
