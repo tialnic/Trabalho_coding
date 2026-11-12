@@ -33,7 +33,7 @@ while opcao != "4":
     print("=========================")
     print("1 - Jogar")
     print("2 - Ver Regras")
-    print("3 - Ver Placar")
+    print("3 - Ver Estatísticas")
     print("4 - Sair")
     print("=========================")
 
@@ -166,8 +166,26 @@ while opcao != "4":
         input("\nPressione Enter para voltar ao menu...")
 
     elif opcao == "3":
-         # fazer placar aglomerativo (olhar o grupo)
-         pass
+        total_partidas = vitorias_jogador1 + vitorias_jogador2 + empates
+        print("\n=========================")
+        print("    ESTATÍSTICAS        ")
+        print("=========================")
+        print("Partidas jogadas: ", int(total_partidas))
+        print("Vitorias Jogador 1 (X): ", int(vitorias_jogador1))
+        print("Vitorias Jogador 2 (O): ", int(vitorias_jogador2))
+        print("Empates: ", int(empates))
+        print("=========================")
+        if total_partidas > 0:
+            porcentagem_j1 = float((vitorias_jogador1 / total_partidas) * 100)
+            porcentagem_j2 = float((vitorias_jogador2 / total_partidas) * 100)
+            porcentagem_empates = float((empates / total_partidas) * 100)
+            print("Aproveitamento Jogador 1: " + f"{porcentagem_j1:.2f}" + "%")
+            print("Aproveitamento Jogador 2: " + f"{porcentagem_j2:.2f}" + "%")
+            print("Taxa de empates: " + f"{porcentagem_empates:.2f}" + "%")
+        else:
+            print("Nenhuma partida disputada ainda.")
+        print("=========================")
+        input("\nPressione Enter para voltar ao menu...")
     elif opcao == "4":
 
         print("Saindo do jogo... Obrigado por jogar!")
